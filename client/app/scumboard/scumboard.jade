@@ -8,7 +8,7 @@ header#banner.hero-unit
 .container
   .row
     .col-md-4
-      h3 Work in progress
+      h3 Todo
       ul.tasks.todo
         li(ng-repeat="task in tasks | filter: {status: 'todo'}")
           h4 {{task.name}}
@@ -18,7 +18,7 @@ header#banner.hero-unit
           button.close(type='button', ng-click='deleteTask(task)')
 
     .col-md-4
-      h3 Work in progress
+      h3 In progress
       ul.tasks.inprogress
         li(ng-repeat="task in tasks | filter: {status: 'inprogress'}")
           h4 {{task.name}}
