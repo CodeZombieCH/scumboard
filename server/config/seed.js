@@ -7,7 +7,6 @@
 
 var Thing = require('../api/thing/thing.model');
 
-
 Thing.find({}).remove(function() {
   Thing.create({
     name : 'Development Tools',
@@ -27,5 +26,30 @@ Thing.find({}).remove(function() {
   },{
     name : 'Deployment Ready',
     info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
+  });
+});
+
+
+var Task = require('../api/task/task.model');
+
+Task.find({}).remove(function() {
+  Task.create({
+    name: 'Perform roundhouse kick',
+    description: '...',
+    status: 'todo',
+    cost: 1,
+    owner: 'Chuck Norris'
+  }, {
+    name: 'Defeat Chuck Norris',
+    description: 'Defeat Chuck Norris in epic battle',
+    status: 'inprogress',
+    cost: 3,
+    owner: 'Bruce Lee'
+  }, {
+    name: 'Beat up Dolph Lundgren',
+    description: 'Challenge mother russia by beating up Dolph Lundgren',
+    status: 'done',
+    cost: 3,
+    owner: 'Sylvester Stallone'
   });
 });

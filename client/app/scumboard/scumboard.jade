@@ -1,0 +1,25 @@
+div(ng-include='"components/navbar/navbar.html"')
+
+header#banner.hero-unit
+  .container
+    h1 Scumboard
+    p.lead A scrumboard for scumbags
+
+.container
+  .row
+    .col-md-12
+      ul.tasks.wip
+        li(ng-repeat="task in tasks")
+          h4 {{task.name}}
+          p {{task.description}}
+          button.close(type='button', ng-click='deleteTask(task)') ×
+
+  h2 Add task
+  .row
+    .col-lg-12
+      form.thing-form
+        p.input-group
+          input.form-control(type='text', placeholder='Task name', ng-model='newTask.name')
+          textarea.form-control(placeholder='Description', ng-model='newTask.description')
+          span.input-group-btn
+            button.btn.btn-primary(type='submit', ng-click='addTask()') Add New
