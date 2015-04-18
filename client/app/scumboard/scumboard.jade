@@ -7,12 +7,29 @@ header#banner.hero-unit
 
 .container
   .row
-    .col-md-12
+    .col-md-4
+      h3 Work in progress
       ul.tasks.wip
-        li(ng-repeat="task in tasks")
+        li(ng-repeat="task in tasks | filter: {status: 'wip'}")
           h4 {{task.name}}
           p {{task.description}}
-          button.close(type='button', ng-click='deleteTask(task)') ×
+          button.close(type='button', ng-click='deleteThing(task)')
+
+    .col-md-4
+      h3 Work in progress
+      ul.tasks.inprogress
+        li(ng-repeat="task in tasks | filter: {status: 'inprogress'}")
+          h4 {{task.name}}
+          p {{task.description}}
+          button.close(type='button', ng-click='deleteThing(task)') ×
+
+    .col-md-4
+      h3 Done
+      ul.tasks.done
+        li(ng-repeat="task in tasks | filter: {status: 'done'}")
+          h4 {{task.name}}
+          p {{task.description}}
+          button.close(type='button', ng-click='deleteThing(task)') ×
 
   h2 Add task
   .row
