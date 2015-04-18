@@ -9,11 +9,13 @@ header#banner.hero-unit
   .row
     .col-md-4
       h3 Work in progress
-      ul.tasks.wip
-        li(ng-repeat="task in tasks | filter: {status: 'wip'}")
+      ul.tasks.todo
+        li(ng-repeat="task in tasks | filter: {status: 'todo'}")
           h4 {{task.name}}
           p {{task.description}}
-          button.close(type='button', ng-click='deleteThing(task)')
+          p Cost: {{task.cost}}
+          p Owner: {{task.owner}}
+          button.close(type='button', ng-click='deleteTask(task)')
 
     .col-md-4
       h3 Work in progress
@@ -21,7 +23,9 @@ header#banner.hero-unit
         li(ng-repeat="task in tasks | filter: {status: 'inprogress'}")
           h4 {{task.name}}
           p {{task.description}}
-          button.close(type='button', ng-click='deleteThing(task)') ×
+          p Cost: {{task.cost}}
+          p Owner: {{task.owner}}
+            button.close(type='button', ng-click='deleteTask(task)') ×
 
     .col-md-4
       h3 Done
@@ -29,7 +33,9 @@ header#banner.hero-unit
         li(ng-repeat="task in tasks | filter: {status: 'done'}")
           h4 {{task.name}}
           p {{task.description}}
-          button.close(type='button', ng-click='deleteThing(task)') ×
+          p Cost: {{task.cost}}
+          p Owner: {{task.owner}}
+            button.close(type='button', ng-click='deleteTask(task)') ×
 
   h2 Add task
   .row
