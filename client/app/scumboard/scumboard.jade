@@ -15,7 +15,7 @@ header#banner.hero-unit
           p {{task.description}}
           p Cost: {{task.cost}}
           p Owner: {{task.owner}}
-            button.close(type='button', ng-click='deleteTask(task)') ×
+          span.close.glyphicon.glyphicon-trash(aria-hidden='true', ng-click='deleteTask(task)')
 
     .col-md-4
       h3 In progress
@@ -25,7 +25,7 @@ header#banner.hero-unit
           p {{task.description}}
           p Cost: {{task.cost}}
           p Owner: {{task.owner}}
-            button.close(type='button', ng-click='deleteTask(task)') ×
+          span.close.glyphicon.glyphicon-trash(aria-hidden='true', ng-click='deleteTask(task)')
 
     .col-md-4
       h3 Done
@@ -35,7 +35,7 @@ header#banner.hero-unit
           p {{task.description}}
           p Cost: {{task.cost}}
           p Owner: {{task.owner}}
-            button.close(type='button', ng-click='deleteTask(task)') ×
+          span.close.glyphicon.glyphicon-trash(aria-hidden='true', ng-click='deleteTask(task)')
 
   h2 Add task
   form.form-horizontal
