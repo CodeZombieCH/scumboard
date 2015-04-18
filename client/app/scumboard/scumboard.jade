@@ -15,7 +15,7 @@ header#banner.hero-unit
           p {{task.description}}
           p Cost: {{task.cost}}
           p Owner: {{task.owner}}
-          button.close(type='button', ng-click='deleteTask(task)')
+            button.close(type='button', ng-click='deleteTask(task)') ×
 
     .col-md-4
       h3 In progress
@@ -38,11 +38,28 @@ header#banner.hero-unit
             button.close(type='button', ng-click='deleteTask(task)') ×
 
   h2 Add task
-  .row
-    .col-lg-12
-      form.thing-form
-        p.input-group
-          input.form-control(type='text', placeholder='Task name', ng-model='newTask.name')
-          textarea.form-control(placeholder='Description', ng-model='newTask.description')
-          span.input-group-btn
-            button.btn.btn-primary(type='submit', ng-click='addTask()') Add New
+  form.form-horizontal
+    .form-group
+      label.col-sm-2.control-label(for='addTaskName') Name
+      .col-sm-10
+        input#addTaskName.form-control(type='text', placeholder='Name', ng-model='newTask.name')
+    .form-group
+      label.col-sm-2.control-label(for='addTaskName') Description
+      .col-sm-10
+        textarea#addTaskDescription.form-control(placeholder='Description', ng-model='newTask.description')
+    .form-group
+      label.col-sm-2.control-label(for='addTaskOwner') Owner
+      .col-sm-10
+        input#addTaskOwner.form-control(type='text', placeholder='Owner', ng-model='newTask.owner')
+    .form-group
+      label.col-sm-2.control-label(for='addTaskCost') Cost
+      .col-sm-10
+        select#addTaskCost.form-control(placeholder='Cost', ng-model='newTask.cost')
+          option 1
+          option 2
+          option 3
+          option 5
+          option 8
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-primary(type='submit', ng-click='addTask()') Add
