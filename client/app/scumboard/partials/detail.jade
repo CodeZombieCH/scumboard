@@ -1,0 +1,32 @@
+div(ng-hide='editing', ng-click='editing = true')
+  h4 {{task.name}}
+  p {{task.description}}
+  p Cost: {{task.cost}}
+  p Owner: {{task.owner}}
+  span.close.glyphicon.glyphicon-trash(aria-hidden='true', ng-click='deleteTask(task)')
+div
+  form.form-horizontal(ng-show='editing', ng-submit='editing = false')
+    .form-group
+      label.col-sm-2.control-label Name
+      .col-sm-10
+        input.form-control(type='text', placeholder='Name', ng-model='task.name')
+    .form-group
+      label.col-sm-2.control-label Description
+      .col-sm-10
+        textarea.form-control(placeholder='Description', ng-model='task.description')
+    .form-group
+      label.col-sm-2.control-label Owner
+      .col-sm-10
+        input.form-control(type='text', placeholder='Owner', ng-model='task.owner')
+    .form-group
+      label.col-sm-2.control-label Cost
+      .col-sm-10
+        select.form-control(placeholder='Cost', ng-model='task.cost')
+          option 1
+          option 2
+          option 3
+          option 5
+          option 8
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-primary(type='submit', ng-click='updateTask(task)') Update

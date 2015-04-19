@@ -11,31 +11,19 @@ header#banner.hero-unit
       h3 Todo
       ul.tasks.todo
         li(ng-repeat="task in tasks | filter: {status: 'todo'}")
-          h4 {{task.name}}
-          p {{task.description}}
-          p Cost: {{task.cost}}
-          p Owner: {{task.owner}}
-          span.close.glyphicon.glyphicon-trash(aria-hidden='true', ng-click='deleteTask(task)')
+          include partials/detail
 
     .col-md-4
       h3 In progress
       ul.tasks.inprogress
         li(ng-repeat="task in tasks | filter: {status: 'inprogress'}")
-          h4 {{task.name}}
-          p {{task.description}}
-          p Cost: {{task.cost}}
-          p Owner: {{task.owner}}
-          span.close.glyphicon.glyphicon-trash(aria-hidden='true', ng-click='deleteTask(task)')
+          include partials/detail
 
     .col-md-4
       h3 Done
       ul.tasks.done
         li(ng-repeat="task in tasks | filter: {status: 'done'}")
-          h4 {{task.name}}
-          p {{task.description}}
-          p Cost: {{task.cost}}
-          p Owner: {{task.owner}}
-          span.close.glyphicon.glyphicon-trash(aria-hidden='true', ng-click='deleteTask(task)')
+          include partials/detail
 
   h2 Add task
   form.form-horizontal
