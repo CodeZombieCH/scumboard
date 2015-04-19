@@ -114,6 +114,8 @@ The fact that we are using AngularJS to create the actual DOM elements makes thi
 - ☑ Edit existing task (in-place editor)
 - ☑ Delete task
 - ☑ Move task
+- ☑ Deploy to heroku
+- ☐ Deploy to private dokku server
 - ☐ In-line editor allowing cancellation
 http://stackoverflow.com/questions/16838148/is-there-a-pattern-for-dealing-with-cancel-in-angularjs-modal-dialogs
 - ☐ Improve overall visual appearance
