@@ -30,7 +30,7 @@ Prepare a running MongoDB server using docker:
 
 	docker run --name mongodb -d -p 27017:27017 mongo
 
-We expose the containers mongodb on the local port 27017 (default port) so we can connect to `localhost`.
+We expose the containers mongodb on the local port 27017 (default port) so connection to the mongodb container is as simple as connection to `localhost`.
 
 
 ## Installation
@@ -123,6 +123,8 @@ http://stackoverflow.com/questions/16838148/is-there-a-pattern-for-dealing-with-
 
 - https://github.com/DaftMonk/generator-angular-fullstack
 - https://github.com/a5hik/ng-sortable/
+- http://www.html5rocks.com/en/tutorials/dnd/basics/
+- https://scotch.io/tutorials/angularjs-form-validation
 
 
 ## License
