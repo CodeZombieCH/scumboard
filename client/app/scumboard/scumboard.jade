@@ -9,21 +9,24 @@ header#banner.hero-unit
   .row
     .col-md-4.column
       h2 Todo
-      ul.tasks.todo
-        li(ng-repeat="task in tasks | filter: {status: 'todo'}")
-          include partials/detail
+      ul.tasks.todo(as-sortable="dragControlListeners", ng-model='tasks', data-status='todo')
+        li(ng-repeat="task in tasks | filter: {status: 'todo'}", as-sortable-item)
+          div(as-sortable-item-handle)
+            include partials/detail
 
     .col-md-4.column
       h2 In progress
-      ul.tasks.inprogress
-        li(ng-repeat="task in tasks | filter: {status: 'inprogress'}")
-          include partials/detail
+      ul.tasks.inprogress(as-sortable="dragControlListeners", ng-model='tasks', data-status='inprogress')
+        li(ng-repeat="task in tasks | filter: {status: 'inprogress'}", as-sortable-item)
+          div(as-sortable-item-handle)
+            include partials/detail
 
     .col-md-4.column
       h2 Done
-      ul.tasks.done
-        li(ng-repeat="task in tasks | filter: {status: 'done'}")
-          include partials/detail
+      ul.tasks.done(as-sortable="dragControlListeners", ng-model='tasks', data-status='done')
+        li(ng-repeat="task in tasks | filter: {status: 'done'}", as-sortable-item)
+          div(as-sortable-item-handle)
+            include partials/detail
 
   h2 Add task
   form.form-horizontal

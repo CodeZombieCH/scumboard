@@ -1,9 +1,12 @@
-div(ng-hide='editing', ng-click='editing = true')
+div(ng-hide='editing', ng-dblclick='editing = true')
   h4 {{task.name}}
   p {{task.description}}
   p Cost: {{task.cost}}
   p Owner: {{task.owner}}
-  span.close.glyphicon.glyphicon-trash(aria-hidden='true', ng-click='deleteTask(task)')
+  div.operations
+    span.close.glyphicon.glyphicon-trash(aria-hidden='true', ng-click='deleteTask(task)')
+    span.close.glyphicon.glyphicon-arrow-left(aria-hidden='true', ng-show='isMovable(task, "left")', ng-click='moveTask(task, "left")')
+    span.close.glyphicon.glyphicon-arrow-right(aria-hidden='true', ng-show='isMovable(task, "right")', ng-click='moveTask(task, "right")')
 div
   form.form-horizontal(ng-show='editing', ng-submit='editing = false')
     .form-group

@@ -37,4 +37,44 @@ angular.module('scumboardApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('task');
     });
+
+
+    $scope.isMovable = function(task, direction) {
+      if(direction === 'left')
+        return task.status === 'inprogress' || task.status === 'done';
+      else if (direction === 'right') {
+        return task.status === 'todo' || task.status === 'inprogress';
+      }
+    };
+
+    $scope.moveTask = function(task, direction) {
+      if(direction === 'left') {
+        if (task.status === 'inprogress')
+          task.status = 'todo';
+        else if (task.status === 'done')
+          task.status = 'inprogress';
+      }
+      else if (direction === 'right') {
+        if(task.status === 'todo')
+          task.status = 'inprogress';
+        else if(task.status === 'inprogress')
+          task.status = 'done';
+      }
+
+      $scope.updateTask(task);
+    };
+
+    $scope.dragControlListeners = {
+      accept: function (sourceItemHandleScope, destSortableScope) {
+        return sourceItemHandleScope.itemScope.sortableScope.$id != destSortableScope.$id;
+      },
+      itemMoved: function (event) {
+        event.source.itemScope.modelValue.status =
+          event.dest.sortableScope.element.context.getAttribute('data-status');
+        $scope.updateTask(event.source.itemScope.modelValue);
+      },
+      orderChanged: function(event) {
+
+      }
+    };
   });
