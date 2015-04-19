@@ -119,6 +119,31 @@ http://stackoverflow.com/questions/16838148/is-there-a-pattern-for-dealing-with-
 - ☐ Improve overall visual appearance
 
 
+## Deployment
+
+### Deploy to heroku
+
+Use yeoman to scaffold a heroku app:
+
+	yo angular-fullstack:heroku
+
+As we are using mongodb, add an addon that provides a mongodb. Instead of the `mongohq` addon mentioned in the documentation we use `mongolab` as it provides a free plan.
+
+Change into the `dist/` directory and add the addon (you might be advised to enter your credit card information using the heroku website):
+
+	heroku addons:add mongolab:sandbox
+
+After the mongodb has been set up run
+
+	grunt build
+
+to build the app to the `dist/` directory
+
+Now we are able to deploy the app using
+
+	grunt buildcontrol:heroku
+
+
 ## Resources
 
 - https://github.com/DaftMonk/generator-angular-fullstack
