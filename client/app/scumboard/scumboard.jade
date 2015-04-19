@@ -7,20 +7,20 @@ header#banner.hero-unit
 
 .container
   .row
-    .col-md-4
-      h3 Todo
+    .col-md-4.column
+      h2 Todo
       ul.tasks.todo
         li(ng-repeat="task in tasks | filter: {status: 'todo'}")
           include partials/detail
 
-    .col-md-4
-      h3 In progress
+    .col-md-4.column
+      h2 In progress
       ul.tasks.inprogress
         li(ng-repeat="task in tasks | filter: {status: 'inprogress'}")
           include partials/detail
 
-    .col-md-4
-      h3 Done
+    .col-md-4.column
+      h2 Done
       ul.tasks.done
         li(ng-repeat="task in tasks | filter: {status: 'done'}")
           include partials/detail
