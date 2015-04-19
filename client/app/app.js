@@ -10,7 +10,7 @@ angular.module('scumboardApp', [
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
-      .otherwise('/');
+      .otherwise('/scumboard');
 
     $locationProvider.html5Mode(true);
   });
