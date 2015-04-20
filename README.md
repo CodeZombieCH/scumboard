@@ -38,17 +38,17 @@ Exposes methods to be called from the view triggered by user interaction. Persis
 
 ## Tasks
 
-[x] Basic scrumboard with the columns
-[x] Add new task
-[x] Edit existing task (in-place editor)
-[x] Delete task
-[x] Move task
-([x]) Deploy to heroku
-[x] Deploy to heroku
-[ ] Deploy to private dokku server
-[ ] In-line editor allowing cancellation
+- [x] Basic scrumboard with the columns
+- [x] Add new task
+- [x] Edit existing task (in-place editor)
+- [x] Delete task
+- [x] Move task
+- ([x]) Deploy to heroku (not working properly)
+- [x] Deploy to heroku
+- [ ] Deploy to private dokku server
+- [ ] In-line editor allowing cancellation
 http://stackoverflow.com/questions/16838148/is-there-a-pattern-for-dealing-with-cancel-in-angularjs-modal-dialogs
-[ ] Improve overall visual appearance
+- [ ] Improve overall visual appearance
 
 
 ## Prerequieres
