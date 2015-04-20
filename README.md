@@ -14,6 +14,25 @@ See ASIGNMENT.md file
 
 *Draft: use technologies that might be useful for my current employer, very short time to market, focus on building knowledge and writing a documentation that might be helpful to others*
 
+### AngularJS MVC implementation
+
+#### Model
+No explicit definition of the model. Based on JSON transfered by REST API. Loosely defined in the view by the `ng-model` directive.
+
+#### View
+Defined as part of HTML files using ordinary HTML markup combined with `ng-*` directives and `{{foo.bar}}` placeholders.
+
+### Controller
+Implemented as Angular controller:
+
+```javascript
+angular.module('app').controller('FooCtrl', function(){
+	...
+});
+```
+
+Exposes methods to be called from the view triggered by user interaction. Persists model by calling the REST API accordingly.
+
 
 ## Prerequieres
 
@@ -30,7 +49,7 @@ Prepare a running MongoDB server using docker:
 
 	docker run --name mongodb -d -p 27017:27017 mongo
 
-We expose the containers mongodb on the local port 27017 (default port) so connection to the mongodb container is as simple as connection to `localhost`.
+We expose the containers mongodb on the local port 27017 (default port) so connecting to the mongodb container is as simple as connecting to locally installed mongodb on `localhost`.
 
 
 ## Installation
