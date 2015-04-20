@@ -35,21 +35,39 @@ var Task = require('../api/task/task.model');
 Task.find({}).remove(function() {
   Task.create({
     name: 'Perform roundhouse kick',
-    description: '...',
+    description: 'Perform roundhouse kick!',
     status: 'todo',
     cost: 1,
+    owner: 'Chuck Norris'
+  }, {
+    name: 'Solve that case',
+    description: 'Find out who murdered the victim in front of you while smoking a cigar',
+    status: 'todo',
+    cost: 3,
+    owner: 'Inspector Columbo'
+  }, {
+    name: 'Fight criminals',
+    description: 'Fight evil criminals as Walker, Texas Ranger',
+    status: 'inprogress',
+    cost: 2,
     owner: 'Chuck Norris'
   }, {
     name: 'Defeat Chuck Norris',
     description: 'Defeat Chuck Norris in epic battle',
     status: 'inprogress',
-    cost: 3,
+    cost: 5,
     owner: 'Bruce Lee'
   }, {
     name: 'Beat up Dolph Lundgren',
     description: 'Challenge mother russia by beating up Dolph Lundgren',
     status: 'done',
-    cost: 3,
+    cost: 8,
     owner: 'Sylvester Stallone'
+  }, {
+    name: 'Become famous',
+    description: 'Become a superstar by making funny movies',
+    status: 'done',
+    cost: 5,
+    owner: 'Jackie Chan'
   });
 });
