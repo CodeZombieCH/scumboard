@@ -143,6 +143,13 @@ To allow the tasks to be dragged and dropped between the columns we use the new 
 The fact that we are using AngularJS to create the actual DOM elements makes things a little bit more complicated. A nice solution is to search for a AngularJS module that provides a way to support Drag and Drop interactions. Searching the web revealed  [`ng-sortable`](https://github.com/a5hik/ng-sortable/) which is used in this project.
 
 
+## Tests
+
+This projects contains several tests to assure a high quality of the code written. Tests are based on [jasmine](http://jasmine.github.io/) and can be run using grunt:
+
+	grunt test
+
+
 ## Deployment
 
 ### Deploy to heroku
