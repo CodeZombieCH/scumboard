@@ -43,7 +43,7 @@ Exposes methods to be called from the view triggered by user interaction. Persis
 - [x] Edit existing task (in-place editor)
 - [x] Delete task
 - [x] Move task
-- [x] Deploy to heroku (not working properly)
+- [x] Drag & Drop (not working properly)
 - [x] Deploy to heroku
 - [ ] Deploy to private dokku server
 - [ ] In-line editor allowing cancellation
