@@ -12,12 +12,14 @@ See ASIGNMENT.md file
 
 ## Why Yeoman/AngularJS?
 
-*Draft: use technologies that might be useful for my current employer, very short time to market, focus on building knowledge and writing a documentation that might be helpful to others*
+The reason I'm using AngularJS instead of Underscore was the idea to use tools/frameworks that allow me to build new web apps in a very short time, resulting in a smaller time to market.
+Another focus was on gaining experience with some of the bleeding edge tools and writing a documentation that might be helpful to others while eventually finding new technologies that might be useful for future projects at my current employer.
+
 
 ### AngularJS MVC implementation
 
 #### Model
-No explicit definition of the model. Based on JSON transfered by REST API. Loosely defined in the view by the `ng-model` directive.
+No explicit definition of the model. Based on the JSON transfered by REST API. Loosely defined in the view by the `ng-model` directive.
 
 #### View
 Defined as part of HTML files using ordinary HTML markup combined with `ng-*` directives and `{{foo.bar}}` placeholders.
@@ -32,6 +34,21 @@ angular.module('app').controller('FooCtrl', function(){
 ```
 
 Exposes methods to be called from the view triggered by user interaction. Persists model by calling the REST API accordingly.
+
+
+## Tasks
+
+[x] Basic scrumboard with the columns
+[x] Add new task
+[x] Edit existing task (in-place editor)
+[x] Delete task
+[x] Move task
+([x]) Deploy to heroku
+[x] Deploy to heroku
+[ ] Deploy to private dokku server
+[ ] In-line editor allowing cancellation
+http://stackoverflow.com/questions/16838148/is-there-a-pattern-for-dealing-with-cancel-in-angularjs-modal-dialogs
+[ ] Improve overall visual appearance
 
 
 ## Prerequieres
@@ -124,20 +141,6 @@ Use the `ng-hide` and `ng-show` directives together with a property, e.g. `editi
 To allow the tasks to be dragged and dropped between the columns we use the new [Drag and Drop API](https://html.spec.whatwg.org/multipage/interaction.html#dnd) that is part of the HTML5 specification.
 
 The fact that we are using AngularJS to create the actual DOM elements makes things a little bit more complicated. A nice solution is to search for a AngularJS module that provides a way to support Drag and Drop interactions. Searching the web revealed  [`ng-sortable`](https://github.com/a5hik/ng-sortable/) which is used in this project.
-
-
-## Tasks
-
-- ☑ Basic scrumboard with the columns
-- ☑ Add new task
-- ☑ Edit existing task (in-place editor)
-- ☑ Delete task
-- ☑ Move task
-- ☑ Deploy to heroku
-- ☐ Deploy to private dokku server
-- ☐ In-line editor allowing cancellation
-http://stackoverflow.com/questions/16838148/is-there-a-pattern-for-dealing-with-cancel-in-angularjs-modal-dialogs
-- ☐ Improve overall visual appearance
 
 
 ## Deployment
